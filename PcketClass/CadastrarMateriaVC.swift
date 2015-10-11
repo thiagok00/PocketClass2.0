@@ -1,23 +1,17 @@
 //
-//  MostrarHorarioVC.swift
+//  CadastrarMateriaVC.swift
 //  PcketClass
 //
-//  Created by Thiago De Angelis on 10/10/15.
+//  Created by Thiago De Angelis on 11/10/15.
 //  Copyright © 2015 Thiago De Angelis. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class MostrarHorarioVC: UIViewController {
-    
-    
-    
+class CadastrarMateriaVC: UIViewController {
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.whiteColor()
-        self.title = "Horario"
+        self.title = "Cadastro"
     }
-    
-    
-    
 }

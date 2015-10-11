@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D05A47F51BCA12B700D74B5A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F41BCA12B700D74B5A /* TabBarVC.swift */; settings = {ASSET_TAGS = (); }; };
+		D05A47F71BCA134E00D74B5A /* MateriaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F61BCA134E00D74B5A /* MateriaDetalhesVC.swift */; settings = {ASSET_TAGS = (); }; };
+		D05A47F91BCA177400D74B5A /* CadastrarMateriaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F81BCA177400D74B5A /* CadastrarMateriaVC.swift */; settings = {ASSET_TAGS = (); }; };
+		D05A47FB1BCA1CA500D74B5A /* CadastrarTarefaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47FA1BCA1CA500D74B5A /* CadastrarTarefaVC.swift */; settings = {ASSET_TAGS = (); }; };
 		D0C25D661BC97351002E5D63 /* MostrarHorarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D651BC97351002E5D63 /* MostrarHorarioVC.swift */; settings = {ASSET_TAGS = (); }; };
 		D0C25D681BC973A0002E5D63 /* MostrarMateriasTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D671BC973A0002E5D63 /* MostrarMateriasTBVC.swift */; settings = {ASSET_TAGS = (); }; };
 		D0C25D6A1BC9777C002E5D63 /* MostrarTarefasTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D691BC9777C002E5D63 /* MostrarTarefasTBVC.swift */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D05A47F41BCA12B700D74B5A /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		D05A47F61BCA134E00D74B5A /* MateriaDetalhesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MateriaDetalhesVC.swift; sourceTree = "<group>"; };
+		D05A47F81BCA177400D74B5A /* CadastrarMateriaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastrarMateriaVC.swift; sourceTree = "<group>"; };
+		D05A47FA1BCA1CA500D74B5A /* CadastrarTarefaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CadastrarTarefaVC.swift; sourceTree = "<group>"; };
 		D0C25D651BC97351002E5D63 /* MostrarHorarioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostrarHorarioVC.swift; sourceTree = "<group>"; };
 		D0C25D671BC973A0002E5D63 /* MostrarMateriasTBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostrarMateriasTBVC.swift; sourceTree = "<group>"; };
 		D0C25D691BC9777C002E5D63 /* MostrarTarefasTBVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MostrarTarefasTBVC.swift; sourceTree = "<group>"; };
@@ -96,6 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				D0C25D671BC973A0002E5D63 /* MostrarMateriasTBVC.swift */,
+				D05A47F61BCA134E00D74B5A /* MateriaDetalhesVC.swift */,
+				D05A47F81BCA177400D74B5A /* CadastrarMateriaVC.swift */,
 			);
 			name = "Materias Controllers";
 			sourceTree = "<group>";
@@ -104,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				D0C25D691BC9777C002E5D63 /* MostrarTarefasTBVC.swift */,
+				D05A47FA1BCA1CA500D74B5A /* CadastrarTarefaVC.swift */,
 			);
 			name = "Tarefas Controllers";
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 		D0DA17C81BB1C6FB007A79C7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D05A47F41BCA12B700D74B5A /* TabBarVC.swift */,
 				D0C25D6C1BC97881002E5D63 /* Tarefas Controllers */,
 				D0C25D6B1BC97827002E5D63 /* Materias Controllers */,
 				D0C25D651BC97351002E5D63 /* MostrarHorarioVC.swift */,
@@ -317,12 +329,16 @@
 			files = (
 				D0C610031BAC819B009D9728 /* Aula.swift in Sources */,
 				D0C60FD51BAC8163009D9728 /* ViewController.swift in Sources */,
+				D05A47F91BCA177400D74B5A /* CadastrarMateriaVC.swift in Sources */,
 				D0C6100A1BAC8966009D9728 /* Tarefa.swift in Sources */,
 				D0C25D661BC97351002E5D63 /* MostrarHorarioVC.swift in Sources */,
 				D0C25D6A1BC9777C002E5D63 /* MostrarTarefasTBVC.swift in Sources */,
 				D0C25D681BC973A0002E5D63 /* MostrarMateriasTBVC.swift in Sources */,
+				D05A47FB1BCA1CA500D74B5A /* CadastrarTarefaVC.swift in Sources */,
 				D0C60FD31BAC8163009D9728 /* AppDelegate.swift in Sources */,
 				D0C610011BAC8178009D9728 /* Materia.swift in Sources */,
+				D05A47F71BCA134E00D74B5A /* MateriaDetalhesVC.swift in Sources */,
+				D05A47F51BCA12B700D74B5A /* TabBarVC.swift in Sources */,
 				D0C610081BAC8942009D9728 /* UserInfo.swift in Sources */,
 				D0C610051BAC877E009D9728 /* DAOMateria.swift in Sources */,
 			);

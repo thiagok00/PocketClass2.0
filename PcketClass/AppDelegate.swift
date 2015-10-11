@@ -20,29 +20,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        //setting the initial screen bounds of the view
-        self.viewController1 = MostrarHorarioVC()
-        self.viewController2 = MostrarMateriasTBVC()
-        self.viewController3 = MostrarTarefasTBVC()
-        //creating object of TabViewController[1,2,3] class
-        let tabBarController = UITabBarController()
-        //creating object of UITabBarController class
-        tabBarController.viewControllers = [viewController1! , viewController2! , viewController3!]
-        //adding all three views to the TabBarView
-        let item1 = UITabBarItem(title: "Horario", image: UIImage(named: "horarioBarItem"), tag: 0)
-        let item2 = UITabBarItem(title: "Materias", image: UIImage(named: "materiasBarItem"), tag: 1)
-        let item3 = UITabBarItem(title: "Tarefas", image: UIImage(named: "tarefasBarItem"), tag: 2)
-        //defining the items of the TabBar corresponding to three views
-        viewController1?.tabBarItem = item1
-        viewController2?.tabBarItem = item2
-        viewController3?.tabBarItem = item3
-        //setting TabBarItems corresponding to each view in TabBarController
-        
-        self.window?.rootViewController = tabBarController
-        //setting the initial VieController as tabBarController
-        
-        window?.makeKeyAndVisible()
+//        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        //setting the initial screen bounds of the view
+//        self.viewController1 = MostrarHorarioVC()
+//        self.viewController2 = MostrarMateriasTBVC()
+//        self.viewController3 = MostrarTarefasTBVC()
+//        //creating object of TabViewController[1,2,3] class
+//        let tabBarController = UITabBarController()
+//        //creating object of UITabBarController class
+//        tabBarController.viewControllers = [viewController1! , viewController2! , viewController3!]
+//        //adding all three views to the TabBarView
+//        let item1 = UITabBarItem(title: "Horario", image: UIImage(named: "horarioBarItem"), tag: 0)
+//        let item2 = UITabBarItem(title: "Materias", image: UIImage(named: "materiasBarItem"), tag: 1)
+//        let item3 = UITabBarItem(title: "Tarefas", image: UIImage(named: "tarefasBarItem"), tag: 2)
+//        //defining the items of the TabBar corresponding to three views
+//        viewController1?.tabBarItem = item1
+//        viewController2?.tabBarItem = item2
+//        viewController3?.tabBarItem = item3
+//        //setting TabBarItems corresponding to each view in TabBarController
+//        
+//        self.window?.rootViewController = tabBarController
+//        //setting the initial VieController as tabBarController
+//        
+//        window?.makeKeyAndVisible()
 
         return true
     }

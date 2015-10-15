@@ -14,6 +14,8 @@ class Materia {
     
     private(set) var nome:String = ""
     private(set) var codigo:String = ""
+    private(set) var turma:String = ""
+    
     var aulas:[Aula]!
     var tarefas:[Tarefa]!
     

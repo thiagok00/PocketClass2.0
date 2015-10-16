@@ -12,7 +12,7 @@ import Foundation
 
 class Materia {
     
-    private(set) var nome:String = ""
+    var nome:String = ""
     var codigo:String = ""
     var turma:String = ""
     

@@ -23,7 +23,6 @@ class MostrarMateriasTBVC: UITableViewController {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addMateria:")
         
-        
     }
     override func viewDidAppear(animated: Bool) {
         materiasArray = DAOMateria().carrega()

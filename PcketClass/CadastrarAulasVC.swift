@@ -52,36 +52,39 @@ class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataS
         if selectedDays.isEmpty {
             return errorRegistering("Insira pelo menos 1 dia da semana")
         }
-        
         let n: Int! = self.navigationController?.viewControllers.count
-        let lastVC = self.navigationController?.viewControllers[n-2] as! CadastrarMateriaVC?
+        if let lastVC = self.navigationController?.viewControllers[n-2] as? CadastrarMateriaVC {
+         
+        
 
         //Testando com aulas da mesma materia não cadastrada ainda
-        for aula in (lastVC?.aulasArray)! {
-            for dia in selectedDays {
-                if dia == aula.dia.rawValue {
-                    
-                    if (horaComeco < aula.horaComeco && horaFinal > aula.horaComeco) ||
-                        (horaComeco > aula.horaComeco && horaComeco < aula.horaFinal) ||
-                        horaComeco == aula.horaComeco {
-                            return errorRegistering("Hora coincide com outra aula do dia \(dia) dessa mesma materia")
+
+            for aula in lastVC.aulasArray {
+            
+                for dia in selectedDays {
+                    if dia == aula.dia.rawValue {
+                        if (horaComeco < aula.horaComeco && horaFinal > aula.horaComeco) ||
+                            (horaComeco > aula.horaComeco && horaComeco < aula.horaFinal) ||
+                            horaComeco == aula.horaComeco {
+                                return errorRegistering("Hora coincide com outra aula do dia \(dia) dessa mesma materia")
+                        }
                     }
-                
                 }
-                
             }
         }
-        
         //Testando com materias ja existentes
         let materiasArray = DAOMateria().carrega()
         for materia in materiasArray {
+            for dia in selectedDays {
             for aula in materia.aulas {
-                if (horaComeco < aula.horaComeco && horaFinal > aula.horaComeco) ||
-                    (horaComeco > aula.horaComeco && horaComeco < aula.horaFinal) ||
-                    horaComeco == aula.horaComeco {
-                        return errorRegistering("Horario coincide com aula dia \(aula.dia.rawValue) da materia \(materia.nome)")
+                if dia == aula.dia.rawValue {
+                    if (horaComeco < aula.horaComeco && horaFinal > aula.horaComeco) ||
+                        (horaComeco > aula.horaComeco && horaComeco < aula.horaFinal) ||
+                        horaComeco == aula.horaComeco {
+                            return errorRegistering("Horario coincide com aula dia \(aula.dia.string) da materia \(materia.nome)")
+                    }
                 }
-                
+                }
             }
         }
     
@@ -102,17 +105,29 @@ class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataS
     func createLecture() {
     
         let n: Int! = self.navigationController?.viewControllers.count
-        let lastVC = self.navigationController?.viewControllers[n-2] as! CadastrarMateriaVC?
-
-        for dia in selectedDays {
-            var sala = ""
-            if campoSala.text == nil {
-                sala = campoSala.text!
+        if let lastVC = self.navigationController?.viewControllers[n-2] as? CadastrarMateriaVC {
+            for dia in selectedDays {
+                var sala = ""
+                if campoSala.text == nil {
+                    sala = campoSala.text!
+                }
+                let aula = Aula(dia: Dia.createDay(dia), sala: sala, horaComeco: horaComeco, horaFinal: horaFinal)
+                lastVC.aulasArray.append(aula)
             }
-            let aula = Aula(dia: Dia.createDay(dia), sala: sala, horaComeco: horaComeco, horaFinal: horaFinal)
-            lastVC?.aulasArray.append(aula)
+        }
+        else if let lastVC = self.navigationController?.viewControllers[n-2] as? MateriaDetalhesVC {
+            for dia in selectedDays {
+                var sala = ""
+                if campoSala.text == nil {
+                    sala = campoSala.text!
+                }
+                let aula = Aula(dia: Dia.createDay(dia), sala: sala, horaComeco: horaComeco, horaFinal: horaFinal)
+                lastVC.materiaEscolhida.aulas.append(aula)
+            }
+            lastVC.salvaAulas()
             
         }
+        
         self.navigationController?.popViewControllerAnimated(true)
     }
     

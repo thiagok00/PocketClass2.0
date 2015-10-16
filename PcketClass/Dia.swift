@@ -56,7 +56,7 @@ class Dia {
     
     
     class func createDay (rawValue:Int)->Dia {
-        if rawValue > 0 && rawValue <= 6 {
+        if rawValue >= 0 && rawValue <= 6 {
             return Dia(rawValue: rawValue)
         }
         return Dia()

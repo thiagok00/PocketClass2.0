@@ -11,7 +11,7 @@ import Foundation
 
 
 
-class Aula{
+class Aula {
     
     private(set) var dia:Dia!
     private(set) var sala:String = ""
@@ -29,7 +29,7 @@ class Aula{
         self.horaFinal = horaFinal
     
     }
-    
+
     
     
     

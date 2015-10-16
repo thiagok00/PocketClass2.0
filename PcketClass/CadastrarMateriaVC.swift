@@ -59,6 +59,8 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
         let materia = Materia(nome: campoNome.text!)
         materia.turma = campoTurma.text!
         materia.codigo = campoCodigo.text!
+        materia.aulas = aulasArray
+        materia.tarefas = [Tarefa]()
         materiasArray.append(materia)
         dao.salva(materiasArray)
         navigationController?.popViewControllerAnimated(true)
@@ -115,7 +117,7 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
             }
             else {
                 let aula = aulasArray[indexPath.row-1]
-                cell.textLabel?.text = "\(aula.dia.rawValue): \(aula.horaComeco) - \(aula.horaFinal)"
+                cell.textLabel?.text = "\(aula.dia.string): \(aula.horaComeco) - \(aula.horaFinal)"
             }
         }
         return cell

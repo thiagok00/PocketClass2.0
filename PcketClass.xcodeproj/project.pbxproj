@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D04AEE331BD175F70010D25E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AEE321BD175F70010D25E /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		D05474361BD0A7EB0035CFCB /* Dia.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05474351BD0A7EB0035CFCB /* Dia.swift */; settings = {ASSET_TAGS = (); }; };
 		D05A47F51BCA12B700D74B5A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F41BCA12B700D74B5A /* TabBarVC.swift */; settings = {ASSET_TAGS = (); }; };
 		D05A47F71BCA134E00D74B5A /* MateriaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F61BCA134E00D74B5A /* MateriaDetalhesVC.swift */; settings = {ASSET_TAGS = (); }; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D04AEE321BD175F70010D25E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D05474351BD0A7EB0035CFCB /* Dia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dia.swift; sourceTree = "<group>"; };
 		D05A47F41BCA12B700D74B5A /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		D05A47F61BCA134E00D74B5A /* MateriaDetalhesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MateriaDetalhesVC.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				D05A47F81BCA177400D74B5A /* CadastrarMateriaVC.swift */,
 				D0BDA5451BCF50E90062A248 /* CadastrarAulasVC.swift */,
 				D0BDA5471BCF58E10062A248 /* DiasDaSemanaTBVC.swift */,
+				D04AEE321BD175F70010D25E /* Extensions.swift */,
 			);
 			name = "Materias Controllers";
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C610031BAC819B009D9728 /* Aula.swift in Sources */,
+				D04AEE331BD175F70010D25E /* Extensions.swift in Sources */,
 				D0C60FD51BAC8163009D9728 /* ViewController.swift in Sources */,
 				D05A47F91BCA177400D74B5A /* CadastrarMateriaVC.swift in Sources */,
 				D0C6100A1BAC8966009D9728 /* Tarefa.swift in Sources */,

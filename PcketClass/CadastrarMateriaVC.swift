@@ -32,7 +32,6 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
         campoTurma.placeholder = "Turma (opcional)"
         
         
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "doneButton:")
     }
     override func viewDidAppear(animated: Bool) {
@@ -44,7 +43,9 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
         if campoNome.text == "" {
             return errorRegistering("Por favor insira um nome")
         }
-        let materiasArray = DAOMateria().carrega()
+        
+        let dao = DAOMateria()
+        var materiasArray = dao.carrega()
         for materia in materiasArray {
             
             if materia.nome == campoNome.text {
@@ -54,6 +55,13 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
                 return errorRegistering("Codigo ja existente")
             }
         }
+        
+        let materia = Materia(nome: campoNome.text!)
+        materia.turma = campoTurma.text!
+        materia.codigo = campoCodigo.text!
+        materiasArray.append(materia)
+        dao.salva(materiasArray)
+        navigationController?.popViewControllerAnimated(true)
         
     }
     
@@ -107,7 +115,7 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
             }
             else {
                 let aula = aulasArray[indexPath.row-1]
-                cell.textLabel?.text = "\(aula.dia.rawValue): \(aula.horaComeco) - \(aula.horaFinal))"
+                cell.textLabel?.text = "\(aula.dia.rawValue): \(aula.horaComeco) - \(aula.horaFinal)"
             }
         }
         return cell
@@ -117,6 +125,24 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
         if indexPath.section == 3 && indexPath.row == 0 {
             let vc = CadastrarAulasVC()
             self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
+    }
+    
+    /* Can Edit Row At Index Path */
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.section == 3 && indexPath.row > 0 {
+            return true
+        }
+        return false
+    }
+    
+    /* Commit Editing Style */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            
+            aulasArray.removeAtIndex(indexPath.row-1)
+            tableView.reloadData()
             
         }
     }

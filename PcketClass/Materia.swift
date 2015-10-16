@@ -13,17 +13,16 @@ import Foundation
 class Materia {
     
     private(set) var nome:String = ""
-    private(set) var codigo:String = ""
-    private(set) var turma:String = ""
+    var codigo:String = ""
+    var turma:String = ""
     
     var aulas:[Aula]!
     var tarefas:[Tarefa]!
     
     
-    init(nome:String, codigo:String) {
+    init(nome:String) {
         
         self.nome = nome
-        self.codigo = codigo
         self.aulas = [Aula]()
         self.tarefas = [Tarefa]()
     }

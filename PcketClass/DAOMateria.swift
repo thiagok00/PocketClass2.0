@@ -61,6 +61,7 @@ class DAOMateria {
             
             materiaDict["Nome"] = materia.nome
             materiaDict["Codigo"] = materia.codigo
+            materiaDict["Turma"] = materia.turma
             materiaDict["Tarefas"] = tarefaArray
             materiaDict["Aulas"] = aulaArray
             rootArray.addObject(materiaDict)
@@ -119,7 +120,9 @@ class DAOMateria {
                 
                 }
                 
-                let materia = Materia(nome: materiaDict.valueForKey("Nome") as! String , codigo: materiaDict.valueForKey("Codigo") as! String)
+                let materia = Materia(nome: materiaDict.valueForKey("Nome") as! String)
+                materia.codigo = materiaDict.valueForKey("Codigo") as! String
+                materia.turma = materiaDict.valueForKey("Turma") as! String
                 materia.aulas = aulasArray
                 materia.tarefas = tarefasArray
                 materiasArray.append(materia)

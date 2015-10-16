@@ -12,6 +12,8 @@ import UIKit
 class MateriaDetalhesVC: UIViewController {
     
     var materiaEscolhida:Materia?
+    var isEditingMateria = false
+    
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.whiteColor()
@@ -21,10 +23,23 @@ class MateriaDetalhesVC: UIViewController {
         myLabel.text = materiaEscolhida?.nome
         self.view.addSubview(myLabel)
     
-    
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: "editing:")
+        
     }
     
+    func editing(sender:AnyObject) {
     
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "stopEditing:")
+        isEditingMateria = true
+        
+    
+    }
+    func stopEditing(sender:AnyObject) {
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: "editing:")
+        isEditingMateria = false
+    
+    }
+
     
     
 }

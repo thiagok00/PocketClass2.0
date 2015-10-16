@@ -25,6 +25,10 @@ class MostrarMateriasTBVC: UITableViewController {
         
         
     }
+    override func viewDidAppear(animated: Bool) {
+        materiasArray = DAOMateria().carrega()
+        self.tableView.reloadData()
+    }
     
     func addMateria(sender:AnyObject) {
         
@@ -56,6 +60,21 @@ class MostrarMateriasTBVC: UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
+    /* Can Edit Row At Index Path */
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    /* Commit Editing Style */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            
+            self.materiasArray.removeAtIndex(indexPath.row)
+            DAOMateria().salva(materiasArray)
+            self.tableView.reloadData()
+            
+        }
+    }
     
     
-}
+}//End of Class

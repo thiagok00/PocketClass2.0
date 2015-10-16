@@ -82,11 +82,18 @@ class DAOMateria {
         if cache.materias == nil {
             
             let plistPath = self.getPath()
-            
-            let materiasDicts = NSMutableArray(contentsOfFile:plistPath)!
             var materiasArray = [Materia]()
+            let materiasDicts = NSMutableArray(contentsOfFile:plistPath)
+
+            if materiasDicts == nil || materiasDicts?.count == 0 {
+                cache.materias = materiasArray
+                return materiasArray
+            }
+    
             
-            for materiaDict in materiasDicts {
+
+            for materiaDict in materiasDicts! {
+                
                 let dict: NSDictionary = materiaDict as! NSDictionary
                 let tarefasDict: NSArray = dict.valueForKey("Tarefas") as! NSArray
                 let aulasDict: NSArray = dict.valueForKey("Aulas") as! NSArray
@@ -107,7 +114,7 @@ class DAOMateria {
                     let aulaDict: NSDictionary = aulaElem as! NSDictionary
                 
                     
-                    let aula = Aula(dia: Dia(rawValue:aulaDict.valueForKey("Dia") as! String)!, sala: aulaDict.valueForKey("Sala") as! String, horaComeco: aulaDict.valueForKey("HoraComeco") as! Int, horaFinal: aulaDict.valueForKey("HoraFinal") as! Int)
+                    let aula = Aula(dia: Dia.createDay(aulaDict.valueForKey("Dia") as! Int), sala: aulaDict.valueForKey("Sala") as! String, horaComeco: aulaDict.valueForKey("HoraComeco") as! Int, horaFinal: aulaDict.valueForKey("HoraFinal") as! Int)
                     aulasArray.append(aula)
                 
                 }
@@ -120,7 +127,7 @@ class DAOMateria {
             }
             UserInfo.sharedInstance.materias = materiasArray
             print("Carregado da Materias plist com sucesso.")
-        }
+            }
         return cache.materias!
         
     } // Fim Carrega

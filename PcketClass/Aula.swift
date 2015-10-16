@@ -8,15 +8,7 @@
 
 import Foundation
 
-enum Dia:String {
-    case Segunda = "Segunda"
-    case Terca = "Terca"
-    case Quarta = "Quarta"
-    case Quinta = "Quinta"
-    case Sexta = "Sexta"
-    case Sabado = "Sabado"
-    case Domingo = "Domingo"
-}
+
 
 
 class Aula{

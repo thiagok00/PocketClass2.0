@@ -16,6 +16,10 @@ class MostrarHorarioVC: UIViewController {
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "Horario"
+        
+        
+        //DAOMateria().salva([Materia(nome: "oi", codigo: "123")])
+        //DAOMateria().salva([Materia]())
     }
     
     

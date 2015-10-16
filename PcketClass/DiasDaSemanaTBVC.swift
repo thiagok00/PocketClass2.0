@@ -13,14 +13,12 @@ class DiasDaSemanaTBVC: UITableViewController {
     
     
     
-    let diasDaSemanaArray = [NSLocalizedString("Segunda",comment:"") , NSLocalizedString("Terca",comment:"") , NSLocalizedString("Quarta",comment:"") , NSLocalizedString("Quinta",comment:"") , NSLocalizedString("Sexta",comment:"") , NSLocalizedString("Sabado",comment:"")]
-    let selectedDays = DiasSelecionados.sharedInstance
-    
-    
+    var diasDaSemanaArray = [0,1,2,3,4,5,6]
     
     /* View Did Load */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         view.backgroundColor = UIColor.whiteColor()
         title = "Dias da Semana"
@@ -44,11 +42,12 @@ class DiasDaSemanaTBVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "dias")
         
-        cell.textLabel?.text = diasDaSemanaArray[indexPath.row]
+        cell.textLabel?.text = Dia.returnString(indexPath.row)
         
-
+        let n: Int! = self.navigationController?.viewControllers.count
+        let lastVC = self.navigationController?.viewControllers[n-2] as! CadastrarAulasVC?
         
-        if let _ = selectedDays.array.indexOf(diasDaSemanaArray[indexPath.row]) {
+        if let _ = lastVC!.selectedDays.indexOf(diasDaSemanaArray[indexPath.row]) {
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         }
         else {
@@ -63,16 +62,19 @@ class DiasDaSemanaTBVC: UITableViewController {
         
         let cellcheck = tableView.cellForRowAtIndexPath(indexPath)
         
+        let n: Int! = self.navigationController?.viewControllers.count
+        let lastVC = self.navigationController?.viewControllers[n-2] as! CadastrarAulasVC?
+        
         /* Desmarca uma celula já selecionada */
         if (cellcheck!.accessoryType == .None) {
             cellcheck!.accessoryType = .Checkmark
-            selectedDays.array.append(diasDaSemanaArray[indexPath.row])
+            lastVC!.selectedDays.append(diasDaSemanaArray[indexPath.row])
         }
             /*  Marca uma celula ainda não selecionada   */
         else {
             cellcheck!.accessoryType = .None
-            if let index = selectedDays.array.indexOf(diasDaSemanaArray[indexPath.row]) {
-               selectedDays.array.removeAtIndex(index)
+            if let index = lastVC!.selectedDays.indexOf(diasDaSemanaArray[indexPath.row]) {
+               lastVC!.selectedDays.removeAtIndex(index)
             }
         }
     }

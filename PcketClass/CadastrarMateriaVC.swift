@@ -9,10 +9,12 @@
 import Foundation
 import UIKit
 
-class CadastrarMateriaVC: UITableViewController {
+class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
     
-    let aulasArray = [Aula]()
-    
+    var aulasArray = [Aula]()
+    let campoNome = UITextField(frame: CGRectMake(18, 0, 320, 50))
+    let campoCodigo = UITextField(frame: CGRectMake(18, 0, 320, 50))
+    let campoTurma = UITextField(frame: CGRectMake(18, 0, 320, 50))
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.whiteColor()
@@ -21,11 +23,48 @@ class CadastrarMateriaVC: UITableViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+        campoCodigo.delegate = self
+        campoNome.delegate = self
+        campoTurma.delegate = self
+        
+        campoCodigo.placeholder = "Codigo (opcional)"
+        campoNome.placeholder = "Nome*"
+        campoTurma.placeholder = "Turma (opcional)"
+        
+        
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "doneButton:")
     }
+    override func viewDidAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
     func doneButton(sender:AnyObject){
-        print("NOT IMPLEMENTED")
+
+        if campoNome.text == "" {
+            return errorRegistering("Por favor insira um nome")
+        }
+        let materiasArray = DAOMateria().carrega()
+        for materia in materiasArray {
+            
+            if materia.nome == campoNome.text {
+                return errorRegistering("Nome ja existente")
+            }
+            else if materia.codigo == campoCodigo.text && campoCodigo.text != "" {
+                return errorRegistering("Codigo ja existente")
+            }
+        }
+        
+    }
+    
+    func errorRegistering(errorMessage:String) {
+        
+        let alerta: UIAlertController = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .Alert)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .Cancel) { action -> Void in }
+        
+        alerta.addAction(cancelAction)
+        self.presentViewController(alerta, animated: true, completion: nil)
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,17 +92,23 @@ class CadastrarMateriaVC: UITableViewController {
         
     
         if indexPath.section == 0 {
-            cell.textLabel?.text = "Nome"
+            cell.contentView.addSubview(campoNome)
         }
         if indexPath.section == 1 {
-            cell.textLabel?.text = "Codigo"
+            cell.contentView.addSubview(campoCodigo)
         }
         if indexPath.section == 2 {
-            cell.textLabel?.text = "Turma"
+            cell.contentView.addSubview(campoTurma)
         }
         if indexPath.section == 3 {
-            cell.textLabel?.text = "Aulas"
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            if (indexPath.row == 0) {
+                cell.textLabel?.text = "Aulas"
+                cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            }
+            else {
+                let aula = aulasArray[indexPath.row-1]
+                cell.textLabel?.text = "\(aula.dia.rawValue): \(aula.horaComeco) - \(aula.horaFinal))"
+            }
         }
         return cell
     }

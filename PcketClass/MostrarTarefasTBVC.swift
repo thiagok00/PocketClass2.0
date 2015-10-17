@@ -18,18 +18,22 @@ class MostrarTarefasTBVC: UITableViewController {
         self.title = "Tarefas"
        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTarefa:")
-        
-        
-        let materiasArray = DAOMateria().carrega()
-        
-        for materia in materiasArray {
-            for tarefa in materia.tarefas{
-                tarefasArray.append(tarefa)
-            }
-        }
-        
+    }
+    override func viewDidAppear(animated: Bool) {
+        self.reloadTarefasArray()
+        self.tableView.reloadData()
     }
     
+    func reloadTarefasArray() {
+        let materiasArray = DAOMateria().carrega()
+        var array = [Tarefa]()
+        for materia in materiasArray {
+            for tarefa in materia.tarefas{
+                array.append(tarefa)
+            }
+        }
+        tarefasArray = array
+    }
     func addTarefa(sender:AnyObject) {
     
         let vc = CadastrarTarefaVC()

@@ -8,29 +8,23 @@
 
 import Foundation
 
-enum tfTipo:String {
-    case Trabalho = "Trabalho"
-    case Prova = "Prova"
-    case Apresentacao = "Apresentacao"
-    case Teste = "Teste"
-    case Lista = "Lista"
-}
+
 
 
 class Tarefa {
     
     var nome:String = ""
     var dataFinal:NSDate = NSDate()
-    var tipo:tfTipo!
+    var tipo:TipoTarefa!
     let materiaNome:String!
     var relevancia:Float = 0.0
     
     
-    init (nome:String, dataFinal:NSDate, tipo:tfTipo, materiaNome:String, relevancia:Float){
+    init (nome:String, dataFinal:NSDate, tipo:Int, materiaNome:String, relevancia:Float){
     
         self.nome = nome
         self.dataFinal = dataFinal
-        self.tipo = tipo
+        self.tipo = TipoTarefa.createType(tipo)
         self.materiaNome = materiaNome
         self.relevancia = relevancia
     }

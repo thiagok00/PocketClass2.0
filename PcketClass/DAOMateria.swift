@@ -106,7 +106,7 @@ class DAOMateria {
                 for tarefaElem in tarefasDict {
                     let tarefaDict: NSDictionary = tarefaElem as! NSDictionary
                     
-                    let tarefa = Tarefa(nome: tarefaDict.valueForKey("Nome") as! String, dataFinal: tarefaDict.valueForKey("Data") as! NSDate, tipo: tfTipo(rawValue:tarefaDict.valueForKey("Tipo") as! String)!, materiaNome: tarefaDict.valueForKey("MateriaNome") as! String, relevancia: tarefaDict.valueForKey("Relevancia") as! Float)
+                    let tarefa = Tarefa(nome: tarefaDict.valueForKey("Nome") as! String, dataFinal: tarefaDict.valueForKey("Data") as! NSDate, tipo: (tarefaDict.valueForKey("Tipo") as! Int), materiaNome: tarefaDict.valueForKey("MateriaNome") as! String, relevancia: tarefaDict.valueForKey("Relevancia") as! Float)
                     
                     tarefasArray.append(tarefa)
                 }

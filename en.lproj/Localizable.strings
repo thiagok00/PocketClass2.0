@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  PcketClass
+
+  Created by Thiago De Angelis on 17/10/15.
+  Copyright © 2015 Thiago De Angelis. All rights reserved.
+*/
+
+
+
+"Trabalho"="Work";
+"Prova"="Exam";
+"Apresentacao"="Presentation";
+"Teste"="Test";
+"Lista"="List";

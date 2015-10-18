@@ -37,6 +37,10 @@ class CadastrarTarefaVC: UIViewController,UITextFieldDelegate, UITableViewDelega
         view.addSubview(datePicker)
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "cadastrarTarefa:")
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "popYourself:", name: "popCadastroTarefa", object: nil)
+        
+        
     }
     override func viewDidAppear(animated: Bool) {
         DAOMateria().carrega()
@@ -60,7 +64,6 @@ class CadastrarTarefaVC: UIViewController,UITextFieldDelegate, UITableViewDelega
         DAOMateria().salva(materiasArray)
         
         navigationController?.popViewControllerAnimated(true)
-    
     }
     func errorRegistering(errorMessage:String) {
         
@@ -121,5 +124,7 @@ class CadastrarTarefaVC: UIViewController,UITextFieldDelegate, UITableViewDelega
         
         return nil
     }
-    
+    func popYourself(sender:AnyObject){
+        self.navigationController?.popToRootViewControllerAnimated(false)
+    }
 }

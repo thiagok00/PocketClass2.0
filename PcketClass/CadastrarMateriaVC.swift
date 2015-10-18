@@ -33,6 +33,8 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
         
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "doneButton:")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "popYourself:", name: "popCadastroMateria", object: nil)
+
     }
     override func viewDidAppear(animated: Bool) {
         self.tableView.reloadData()
@@ -149,6 +151,9 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
         }
     }
 
+    func popYourself(sender:AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(false)
+    }
     
     
 }//End of Class

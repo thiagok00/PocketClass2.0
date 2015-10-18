@@ -29,4 +29,40 @@ class Tarefa {
         self.relevancia = relevancia
     }
     
-}
+    func tempoRestante() ->Int{
+        
+        
+        let tempo = self.dataFinal.timeIntervalSinceNow/60/60/24
+        var tempoRestante:Double = tempo
+        
+        tempoRestante++
+        
+        if(tempoRestante<0) {
+            tempoRestante--
+        }
+        
+        return Int(tempoRestante)
+    }
+    
+    func getStringTempoRestante()->String {
+    
+        let diasRestantes = tempoRestante()
+        
+        if diasRestantes < 0 {
+            return "Tarefa expirada."
+        }
+        if diasRestantes == 0 {
+            return "Hoje."
+        }
+        if diasRestantes == 1 {
+            return "Falta 1 dia."
+        }
+        else {
+            return "Faltam \(diasRestantes) dias."
+        }
+    
+    }
+    
+
+    
+}//End of Class

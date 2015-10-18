@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 class TipoTarefa {
     
     var rawValue:Int = 0
@@ -49,6 +49,27 @@ class TipoTarefa {
         }
     }
     
+    class func getImg(tipo:TipoTarefa)->UIImage {
+        switch tipo.rawValue {
+        case 0:
+            return UIImage(named: "TrabalhoImg")!
+            
+        case 1:
+            return UIImage(named: "ProvaImg")!
+            
+        case 2:
+            return UIImage(named: "ApresentacaoImg")!
+            
+        case 3:
+            return UIImage(named: "TesteImg")!
+            
+        case 4:
+            return UIImage(named: "ListaImg")!
+            
+        default:
+            return UIImage(named: "OutrosImg")!
+        }
+    }
     
     
 }//End of class

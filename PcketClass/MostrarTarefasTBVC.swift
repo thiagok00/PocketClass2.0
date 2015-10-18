@@ -46,12 +46,18 @@ class MostrarTarefasTBVC: UITableViewController {
         return tarefasArray.count
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "tarefa_id")
+        let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "tarefa_id")
 
-        cell.textLabel?.text = tarefasArray[indexPath.row].nome + " - " + tarefasArray[indexPath.row].materiaNome
-        
+        let tarefa = tarefasArray[indexPath.row]
+        cell.textLabel?.text = tarefa.nome + " - " + tarefa.materiaNome
+        cell.detailTextLabel?.text = tarefa.getStringTempoRestante()
+        cell.imageView?.image = TipoTarefa.getImg(tarefa.tipo)
         
         return cell
     }

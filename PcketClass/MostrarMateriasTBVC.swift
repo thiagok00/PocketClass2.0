@@ -28,6 +28,11 @@ class MostrarMateriasTBVC: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         materiasArray = DAOMateria().carrega()
         self.tableView.reloadData()
+        
+        let timeNow = NSDate()
+       // timeNow.
+        
+        
     }
     
     func addMateria(sender:AnyObject) {
@@ -55,7 +60,6 @@ class MostrarMateriasTBVC: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let vc = MateriaDetalhesVC()
-        vc.navigationController?.title = "oioi"
         vc.materiaEscolhida = materiasArray[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
         

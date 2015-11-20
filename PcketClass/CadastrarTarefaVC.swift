@@ -25,6 +25,7 @@ class CadastrarTarefaVC: UIViewController,UITextFieldDelegate, UITableViewDelega
         campoNome.placeholder = "Nome"
         
         tableView = UITableView(frame: CGRectMake(0, 300, self.view.frame.size.width, 400))
+        tableView.scrollEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame:CGRectZero)

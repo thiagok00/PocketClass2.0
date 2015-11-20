@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D04AEE331BD175F70010D25E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AEE321BD175F70010D25E /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		D04AEE351BD288C00010D25E /* AuxiliarCadastroTarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AEE341BD288C00010D25E /* AuxiliarCadastroTarefa.swift */; settings = {ASSET_TAGS = (); }; };
-		D04AEE371BD28AD20010D25E /* TipoTarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AEE361BD28AD20010D25E /* TipoTarefa.swift */; settings = {ASSET_TAGS = (); }; };
+		D04AEE331BD175F70010D25E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AEE321BD175F70010D25E /* Extensions.swift */; };
+		D04AEE351BD288C00010D25E /* AuxiliarCadastroTarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AEE341BD288C00010D25E /* AuxiliarCadastroTarefa.swift */; };
+		D04AEE371BD28AD20010D25E /* TipoTarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04AEE361BD28AD20010D25E /* TipoTarefa.swift */; };
 		D04AEE491BD291140010D25E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D04AEE4B1BD291140010D25E /* Localizable.strings */; };
-		D05474361BD0A7EB0035CFCB /* Dia.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05474351BD0A7EB0035CFCB /* Dia.swift */; settings = {ASSET_TAGS = (); }; };
-		D05A47F51BCA12B700D74B5A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F41BCA12B700D74B5A /* TabBarVC.swift */; settings = {ASSET_TAGS = (); }; };
-		D05A47F71BCA134E00D74B5A /* MateriaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F61BCA134E00D74B5A /* MateriaDetalhesVC.swift */; settings = {ASSET_TAGS = (); }; };
-		D05A47F91BCA177400D74B5A /* CadastrarMateriaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F81BCA177400D74B5A /* CadastrarMateriaVC.swift */; settings = {ASSET_TAGS = (); }; };
-		D05A47FB1BCA1CA500D74B5A /* CadastrarTarefaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47FA1BCA1CA500D74B5A /* CadastrarTarefaVC.swift */; settings = {ASSET_TAGS = (); }; };
-		D0BDA5461BCF50E90062A248 /* CadastrarAulasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDA5451BCF50E90062A248 /* CadastrarAulasVC.swift */; settings = {ASSET_TAGS = (); }; };
-		D0BDA5481BCF58E10062A248 /* DiasDaSemanaTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDA5471BCF58E10062A248 /* DiasDaSemanaTBVC.swift */; settings = {ASSET_TAGS = (); }; };
-		D0C25D661BC97351002E5D63 /* MostrarHorarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D651BC97351002E5D63 /* MostrarHorarioVC.swift */; settings = {ASSET_TAGS = (); }; };
-		D0C25D681BC973A0002E5D63 /* MostrarMateriasTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D671BC973A0002E5D63 /* MostrarMateriasTBVC.swift */; settings = {ASSET_TAGS = (); }; };
-		D0C25D6A1BC9777C002E5D63 /* MostrarTarefasTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D691BC9777C002E5D63 /* MostrarTarefasTBVC.swift */; settings = {ASSET_TAGS = (); }; };
+		D05474361BD0A7EB0035CFCB /* Dia.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05474351BD0A7EB0035CFCB /* Dia.swift */; };
+		D05A47F51BCA12B700D74B5A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F41BCA12B700D74B5A /* TabBarVC.swift */; };
+		D05A47F71BCA134E00D74B5A /* MateriaDetalhesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F61BCA134E00D74B5A /* MateriaDetalhesVC.swift */; };
+		D05A47F91BCA177400D74B5A /* CadastrarMateriaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47F81BCA177400D74B5A /* CadastrarMateriaVC.swift */; };
+		D05A47FB1BCA1CA500D74B5A /* CadastrarTarefaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05A47FA1BCA1CA500D74B5A /* CadastrarTarefaVC.swift */; };
+		D0BDA5461BCF50E90062A248 /* CadastrarAulasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDA5451BCF50E90062A248 /* CadastrarAulasVC.swift */; };
+		D0BDA5481BCF58E10062A248 /* DiasDaSemanaTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BDA5471BCF58E10062A248 /* DiasDaSemanaTBVC.swift */; };
+		D0C25D661BC97351002E5D63 /* MostrarHorarioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D651BC97351002E5D63 /* MostrarHorarioVC.swift */; };
+		D0C25D681BC973A0002E5D63 /* MostrarMateriasTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D671BC973A0002E5D63 /* MostrarMateriasTBVC.swift */; };
+		D0C25D6A1BC9777C002E5D63 /* MostrarTarefasTBVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C25D691BC9777C002E5D63 /* MostrarTarefasTBVC.swift */; };
 		D0C60FD31BAC8163009D9728 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C60FD21BAC8163009D9728 /* AppDelegate.swift */; };
 		D0C60FD51BAC8163009D9728 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C60FD41BAC8163009D9728 /* ViewController.swift */; };
 		D0C60FD81BAC8163009D9728 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C60FD61BAC8163009D9728 /* Main.storyboard */; };
@@ -28,12 +28,13 @@
 		D0C60FDD1BAC8163009D9728 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C60FDB1BAC8163009D9728 /* LaunchScreen.storyboard */; };
 		D0C60FE81BAC8163009D9728 /* PcketClassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C60FE71BAC8163009D9728 /* PcketClassTests.swift */; };
 		D0C60FF31BAC8163009D9728 /* PcketClassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C60FF21BAC8163009D9728 /* PcketClassUITests.swift */; };
-		D0C610011BAC8178009D9728 /* Materia.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610001BAC8178009D9728 /* Materia.swift */; settings = {ASSET_TAGS = (); }; };
-		D0C610031BAC819B009D9728 /* Aula.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610021BAC819B009D9728 /* Aula.swift */; settings = {ASSET_TAGS = (); }; };
-		D0C610051BAC877E009D9728 /* DAOMateria.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610041BAC877E009D9728 /* DAOMateria.swift */; settings = {ASSET_TAGS = (); }; };
-		D0C610081BAC8942009D9728 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610071BAC8942009D9728 /* UserInfo.swift */; settings = {ASSET_TAGS = (); }; };
-		D0C6100A1BAC8966009D9728 /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610091BAC8966009D9728 /* Tarefa.swift */; settings = {ASSET_TAGS = (); }; };
-		D0C6100C1BAC9120009D9728 /* Materias.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C6100B1BAC9120009D9728 /* Materias.plist */; settings = {ASSET_TAGS = (); }; };
+		D0C610011BAC8178009D9728 /* Materia.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610001BAC8178009D9728 /* Materia.swift */; };
+		D0C610031BAC819B009D9728 /* Aula.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610021BAC819B009D9728 /* Aula.swift */; };
+		D0C610051BAC877E009D9728 /* DAOMateria.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610041BAC877E009D9728 /* DAOMateria.swift */; };
+		D0C610081BAC8942009D9728 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610071BAC8942009D9728 /* UserInfo.swift */; };
+		D0C6100A1BAC8966009D9728 /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C610091BAC8966009D9728 /* Tarefa.swift */; };
+		D0C6100C1BAC9120009D9728 /* Materias.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0C6100B1BAC9120009D9728 /* Materias.plist */; };
+		D0D6C4241BFF5FCB00EB56A6 /* DetalheTarefasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D6C4231BFF5FCB00EB56A6 /* DetalheTarefasVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		D0C610071BAC8942009D9728 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		D0C610091BAC8966009D9728 /* Tarefa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tarefa.swift; sourceTree = "<group>"; };
 		D0C6100B1BAC9120009D9728 /* Materias.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Materias.plist; sourceTree = "<group>"; };
+		D0D6C4231BFF5FCB00EB56A6 /* DetalheTarefasVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalheTarefasVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				D0C25D691BC9777C002E5D63 /* MostrarTarefasTBVC.swift */,
 				D05A47FA1BCA1CA500D74B5A /* CadastrarTarefaVC.swift */,
 				D04AEE341BD288C00010D25E /* AuxiliarCadastroTarefa.swift */,
+				D0D6C4231BFF5FCB00EB56A6 /* DetalheTarefasVC.swift */,
 			);
 			name = "Tarefas Controllers";
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				D04AEE331BD175F70010D25E /* Extensions.swift in Sources */,
 				D0C60FD51BAC8163009D9728 /* ViewController.swift in Sources */,
 				D05A47F91BCA177400D74B5A /* CadastrarMateriaVC.swift in Sources */,
+				D0D6C4241BFF5FCB00EB56A6 /* DetalheTarefasVC.swift in Sources */,
 				D0C6100A1BAC8966009D9728 /* Tarefa.swift in Sources */,
 				D0C25D661BC97351002E5D63 /* MostrarHorarioVC.swift in Sources */,
 				D0C25D6A1BC9777C002E5D63 /* MostrarTarefasTBVC.swift in Sources */,

@@ -18,7 +18,10 @@ class MostrarHorarioVC: UITableViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "Horario"
         self.atualizaAulasArray()
-
+        self.tableView.allowsSelection = false
+        
+        print(NSDate.getHour()!)
+        
         aulasArray.count
     }
     func atualizaAulasArray() {
@@ -27,7 +30,7 @@ class MostrarHorarioVC: UITableViewController {
         materiaDaAula = [Materia]()
         
         let materiasArray = DAOMateria().carrega()
-        let day = Dia.getDayOfWeek()
+        let day = NSDate.getDayOfWeek()
         
         for materia in materiasArray {
             for aula in materia.aulas {
@@ -42,10 +45,17 @@ class MostrarHorarioVC: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         atualizaAulasArray()
         tableView.reloadData()
+        let hour = NSDate.getHour()
+        if (hour >= 7 && hour <= 21){
+            self.tableView.allowsSelection = true
+            tableView.selectRowAtIndexPath(NSIndexPath(forRow: hour!-7, inSection: 0), animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+            self.tableView.allowsSelection = false
+
+        }
     }
     
 
-    
+
 
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +70,7 @@ class MostrarHorarioVC: UITableViewController {
         let horaComeco = indexPath.row+7
         let horaFinal = indexPath.row+8
         
-        var string = formatter.stringFromNumber(horaComeco)!+":00 - "+formatter.stringFromNumber(horaFinal)!+":00"
+        var string = formatter.stringFromNumber(horaComeco)!+":00 - "+formatter.stringFromNumber(horaFinal)!+":00     "
 
         
         for var i = 0 ; i < aulasArray.count ; i++ {

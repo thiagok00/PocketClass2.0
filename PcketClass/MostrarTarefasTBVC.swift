@@ -17,6 +17,9 @@ class MostrarTarefasTBVC: UITableViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "Tarefas"
        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.allowsSelection = true
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addTarefa:")
     }
     override func viewDidAppear(animated: Bool) {
@@ -74,6 +77,13 @@ class MostrarTarefasTBVC: UITableViewController {
             self.reloadTarefasArray()
             tableView.reloadData()
         }
+    }
+    
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let vc = DetalheTarefasVC()
+        vc.tarefaEscolhida = tarefasArray[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

@@ -26,7 +26,6 @@ class MateriaDetalhesVC: UITableViewController, UITextFieldDelegate {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-//        self.tableView.userInteractionEnabled = false
         
         self.campoTurma.delegate = self
         self.campoNome.delegate = self

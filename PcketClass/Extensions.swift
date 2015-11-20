@@ -20,3 +20,39 @@ extension Array where Element: Equatable {
         }
     }
 }
+
+extension NSDate {
+    
+    func dateFromString(date: String, format: String) -> NSDate {
+        let formatter = NSDateFormatter()
+        let locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        
+        formatter.locale = locale
+        formatter.dateFormat = format
+        return formatter.dateFromString(date)!
+    }
+    func getCurrentShortDate() -> String {
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let DateInFormat = dateFormatter.stringFromDate(self)
+        
+        return DateInFormat
+    }
+    class func getDayOfWeek()->Int? {
+        let todayDate = NSDate()
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let myComponents = myCalendar?.components(NSCalendarUnit.Weekday, fromDate: todayDate)
+        let weekDay = myComponents?.weekday
+        return weekDay!
+    }
+    
+    class func getHour()->Int? {
+        let todayDate = NSDate()
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let myComponents = myCalendar?.components(NSCalendarUnit.Hour, fromDate: todayDate)
+        let hour = myComponents?.hour
+        return hour!
+    }
+    
+}

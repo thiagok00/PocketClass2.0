@@ -13,7 +13,7 @@ class DiasDaSemanaTBVC: UITableViewController {
     
     
     
-    var diasDaSemanaArray = [0,1,2,3,4,5,6]
+    var diasDaSemanaArray = [1,2,3,4,5,6,7]
     
     /* View Did Load */
     override func viewDidLoad() {
@@ -42,7 +42,7 @@ class DiasDaSemanaTBVC: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "dias")
         
-        cell.textLabel?.text = Dia.returnString(indexPath.row)
+        cell.textLabel?.text = Dia.returnString(indexPath.row+1)
         
         let n: Int! = self.navigationController?.viewControllers.count
         let lastVC = self.navigationController?.viewControllers[n-2] as! CadastrarAulasVC?

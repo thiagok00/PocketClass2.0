@@ -19,30 +19,30 @@ class Dia {
         
         switch rawValue {
         
-        case 0:
-            string = NSLocalizedString("Segunda", comment: "")
-            break
         case 1:
-            string = NSLocalizedString("Terca", comment: "")
+            string = NSLocalizedString("Domingo", comment: "")
             break
         case 2:
-            string = NSLocalizedString("Quarta", comment: "")
-
+            string = NSLocalizedString("Segunda", comment: "")
             break
         case 3:
-            string = NSLocalizedString("Quinta", comment: "")
+            string = NSLocalizedString("Terca", comment: "")
 
             break
         case 4:
-            string = NSLocalizedString("Sexta", comment: "")
+            string = NSLocalizedString("Quarta", comment: "")
 
             break
         case 5:
-            string = NSLocalizedString("Sabado", comment: "")
+            string = NSLocalizedString("Quinta", comment: "")
 
             break
         case 6:
-            string = NSLocalizedString("Domingo", comment: "")
+            string = NSLocalizedString("Sexta", comment: "")
+
+            break
+        case 7:
+            string = NSLocalizedString("Sabado", comment: "")
 
             break
         default:
@@ -56,7 +56,7 @@ class Dia {
     
     
     class func createDay (rawValue:Int)->Dia {
-        if rawValue >= 0 && rawValue <= 6 {
+        if rawValue > 0 && rawValue <= 7 {
             return Dia(rawValue: rawValue)
         }
         return Dia()
@@ -65,20 +65,20 @@ class Dia {
     class func returnString(rawValue:Int)->String{
     
         switch rawValue {
-        case 0:
-            return NSLocalizedString("Segunda", comment: "")
         case 1:
-            return NSLocalizedString("Terca", comment: "")
-        case 2:
-            return NSLocalizedString("Quarta", comment: "")
-        case 3:
-            return NSLocalizedString("Quinta", comment: "")
-        case 4:
-            return NSLocalizedString("Sexta", comment: "")
-        case 5:
-            return NSLocalizedString("Sabado", comment: "")
-        case 6:
             return NSLocalizedString("Domingo", comment: "")
+        case 2:
+            return NSLocalizedString("Segunda", comment: "")
+        case 3:
+            return NSLocalizedString("Terca", comment: "")
+        case 4:
+            return NSLocalizedString("Quarta", comment: "")
+        case 5:
+            return NSLocalizedString("Quinta", comment: "")
+        case 6:
+            return NSLocalizedString("Sexta", comment: "")
+        case 7:
+            return NSLocalizedString("Sabado", comment: "")
         default:
             return "None"
         }
@@ -87,7 +87,7 @@ class Dia {
     class func getDaysAbbreviations(rawValues:[Int]) ->String{
     
         var str = ""
-        let abbreviations = ["Seg","Ter","Quar","Qui","Sex","Sab","Dom"]
+        let abbreviations = ["Dom","Seg","Ter","Quar","Qui","Sex","Sab"]
 
         if rawValues.isEmpty {
             return NSLocalizedString("Nenhum", comment: "")
@@ -96,16 +96,23 @@ class Dia {
             return NSLocalizedString("Todos", comment: "")
         }
         
-        for var i = 0; i < 7 ; i++ {
+        for var i = 1; i < 8 ; i++ {
         
             if let _ = rawValues.indexOf(i) {
-                str += abbreviations[i]
+                str += abbreviations[i-1]
             }
         }
     
         return str
     }
     
+    class func getDayOfWeek()->Int? {
+        let todayDate = NSDate()
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let myComponents = myCalendar?.components(NSCalendarUnit.Weekday, fromDate: todayDate)
+        let weekDay = myComponents?.weekday
+        return weekDay!
+    }
     
     
 }//End of class

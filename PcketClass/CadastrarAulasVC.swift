@@ -108,7 +108,7 @@ class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataS
         if let lastVC = self.navigationController?.viewControllers[n-2] as? CadastrarMateriaVC {
             for dia in selectedDays {
                 var sala = ""
-                if campoSala.text == nil {
+                if campoSala.text != nil {
                     sala = campoSala.text!
                 }
                 let aula = Aula(dia: Dia.createDay(dia), sala: sala, horaComeco: horaComeco, horaFinal: horaFinal)
@@ -118,7 +118,7 @@ class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataS
         else if let lastVC = self.navigationController?.viewControllers[n-2] as? MateriaDetalhesVC {
             for dia in selectedDays {
                 var sala = ""
-                if campoSala.text == nil {
+                if campoSala.text != nil {
                     sala = campoSala.text!
                 }
                 let aula = Aula(dia: Dia.createDay(dia), sala: sala, horaComeco: horaComeco, horaFinal: horaFinal)

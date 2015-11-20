@@ -62,7 +62,19 @@ class MostrarTarefasTBVC: UITableViewController {
         return cell
     }
     
+    /* Can Edit Row At Index Path */
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
     
+    /* Commit Editing Style */
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            DAOMateria().removeTarefa(tarefasArray[indexPath.row])
+            self.reloadTarefasArray()
+            tableView.reloadData()
+        }
+    }
     
     
 }

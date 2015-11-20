@@ -135,4 +135,17 @@ class DAOMateria {
         
     } // Fim Carrega
     
+    func removeTarefa(tarefa:Tarefa) {
+        
+        let materiasArray = self.carrega()
+        for materia in materiasArray {
+            if materia.nome == tarefa.materiaNome {
+                materia.tarefas.removeObject(tarefa)
+            }
+        }
+        self.salva(materiasArray)
+    }
+    
+    
+    
 } //End of Class

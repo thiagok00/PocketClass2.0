@@ -32,6 +32,7 @@ class MateriaDetalhesVC: UITableViewController, UITextFieldDelegate {
         self.campoNome.delegate = self
         self.campoCodigo.delegate = self
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "popYourself:", name: "popCadastroMateria", object: nil)
     }
     override func viewDidAppear(animated: Bool) {
         self.tableView.reloadData()
@@ -150,7 +151,7 @@ class MateriaDetalhesVC: UITableViewController, UITextFieldDelegate {
             }
             else {
                 let aula = (materiaEscolhida?.aulas[indexPath.row])!
-                cell.textLabel?.text = "\(aula.dia.string): \(aula.horaComeco) - \(aula.horaFinal)"
+                cell.textLabel?.text = "\(aula.dia.string): \(aula.horaComeco) - \(aula.horaFinal) - \(aula.sala)"
             }
         }
         
@@ -219,7 +220,10 @@ class MateriaDetalhesVC: UITableViewController, UITextFieldDelegate {
         }
         dao.salva(materiasArray)
     }
-    
+
+    func popYourself(sender:AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(false)
+    }
 
     
     

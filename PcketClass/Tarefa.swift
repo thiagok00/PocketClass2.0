@@ -11,13 +11,14 @@ import Foundation
 
 
 
-class Tarefa {
+class Tarefa:Equatable{
     
     var nome:String = ""
     var dataFinal:NSDate = NSDate()
     var tipo:TipoTarefa!
     let materiaNome:String!
     var relevancia:Float = 0.0
+    
     
     
     init (nome:String, dataFinal:NSDate, tipo:Int, materiaNome:String, relevancia:Float){
@@ -63,6 +64,11 @@ class Tarefa {
     
     }
     
-
-    
 }//End of Class
+
+func == (lhs: Tarefa, rhs: Tarefa) -> Bool {
+    if lhs.materiaNome == rhs.materiaNome {
+        return lhs.nome == rhs.nome
+    }
+    return false
+}

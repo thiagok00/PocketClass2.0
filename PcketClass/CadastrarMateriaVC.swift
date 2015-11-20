@@ -22,10 +22,14 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
     
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.scrollEnabled = false
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         campoCodigo.delegate = self
         campoNome.delegate = self
         campoTurma.delegate = self
+        
+        campoCodigo.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        campoTurma.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         
         campoCodigo.placeholder = "Codigo (opcional)"
         campoNome.placeholder = "Nome*"
@@ -36,6 +40,12 @@ class CadastrarMateriaVC: UITableViewController, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "popYourself:", name: "popCadastroMateria", object: nil)
 
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidAppear(animated: Bool) {
         self.tableView.reloadData()
     }

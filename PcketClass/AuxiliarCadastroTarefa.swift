@@ -17,8 +17,13 @@ class AuxiliarCadastroTarefa: UITableViewController {
     override func viewDidLoad() {
         
         view.backgroundColor = UIColor.whiteColor()
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+
         if mostrarMateria {
             materiasArray = DAOMateria().carrega()
+        }
+        else {
+            tableView.scrollEnabled = false
         }
         
     }

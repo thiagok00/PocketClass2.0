@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MostrarTarefasTBVC: UITableViewController {
+class MostrarTarefasTBVC: UITableViewController, UIAlertViewDelegate {
     
     var tarefasArray = [Tarefa]()
     
@@ -39,9 +39,17 @@ class MostrarTarefasTBVC: UITableViewController {
     }
     func addTarefa(sender:AnyObject) {
     
-        let vc = CadastrarTarefaVC()
-        self.navigationController?.pushViewController(vc, animated: true)
-
+        if DAOMateria().carrega().count == 0 {
+            let alert = UIAlertController(title: "Opa", message: "Você só pode cadastrar tarefas se tiver materias cadastradas", preferredStyle: UIAlertControllerStyle.Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            
+            alert.addAction(defaultAction)
+            presentViewController(alert, animated: true, completion: nil)
+        }
+        else {
+            let vc = CadastrarTarefaVC()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
     }
     

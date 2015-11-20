@@ -28,9 +28,13 @@ class DetalheTarefasVC: UITableViewController {
         button.setTitle("Excluir Tarefa", forState: UIControlState.Normal)
         button.addTarget(self, action: "deletarTarefa", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(button)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "popYourself", name: "popCadastroTarefa", object: nil)
         
     }
     
+    func popYourself() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     func deletarTarefa() {
         DAOMateria().removeTarefa(tarefaEscolhida)
         self.navigationController?.popToRootViewControllerAnimated(true)

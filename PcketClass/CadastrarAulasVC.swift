@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
+class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource , UITextFieldDelegate {
     
     let horariosArray  = ["7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
     let diasDaSemanaArray = ["Segunda","Terca","Quarta","Quinta","Sexta"]
@@ -26,11 +26,14 @@ class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataS
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "Cadastro"
         campoSala.placeholder = "Sala"
+        campoSala.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        campoSala.delegate = self
         
         tableView = UITableView(frame: CGRectMake(0, 300, self.view.frame.size.width, 400))
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.scrollEnabled = false
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         view.addSubview(tableView)
         
@@ -41,6 +44,10 @@ class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataS
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "doneButton:")
         
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func doneButton(sender:AnyObject) {

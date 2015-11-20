@@ -37,18 +37,24 @@ class CadastrarTarefaVC: UIViewController,UITextFieldDelegate, UITableViewDelega
         datePicker.maximumDate = NSDate().dateByAddingTimeInterval(365*24*60*60)
         view.addSubview(datePicker)
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "cadastrarTarefa:")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "cadastrarTarefa")
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "popYourself:", name: "popCadastroTarefa", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "popYourself", name: "popCadastroTarefa", object: nil)
         
         
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
     override func viewDidAppear(animated: Bool) {
         DAOMateria().carrega()
         self.tableView.reloadData()
     }
     
-    func cadastrarTarefa(sender:AnyObject) {
+    func cadastrarTarefa() {
         
         if campoNome.text == "" {
             return errorRegistering("Por favor insira um nome")
@@ -125,7 +131,7 @@ class CadastrarTarefaVC: UIViewController,UITextFieldDelegate, UITableViewDelega
         
         return nil
     }
-    func popYourself(sender:AnyObject){
+    func popYourself() {
         self.navigationController?.popToRootViewControllerAnimated(false)
     }
 }

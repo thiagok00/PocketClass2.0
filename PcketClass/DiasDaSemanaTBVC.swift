@@ -22,10 +22,8 @@ class DiasDaSemanaTBVC: UITableViewController {
         
         view.backgroundColor = UIColor.whiteColor()
         title = "Dias da Semana"
-        /*******************************************/
-        
-        //Pega o view anterior (CadastrarMateriasVC)
-
+        tableView.tableFooterView = UIView(frame:CGRectZero)
+        self.tableView.scrollEnabled = false
     }
     
     /* Number of Sections In Table View */

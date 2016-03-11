@@ -130,7 +130,7 @@ class DAOMateria {
             }
             UserInfo.sharedInstance.materias = materiasArray
             print("Carregado da Materias plist com sucesso.")
-            }
+        }
         return cache.materias!
         
     } // Fim Carrega

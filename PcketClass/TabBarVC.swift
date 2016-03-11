@@ -29,6 +29,8 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         let navController3 = UINavigationController(rootViewController: viewController3)
         //creating object of TabViewController[1,2,3] class
         
+        
+        
         //creating object of UITabBarController class
         self.viewControllers = [navController1 , navController2 , navController3]
         //adding all three views to the TabBarView
@@ -39,6 +41,12 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         viewController1.tabBarItem = item1
         viewController2.tabBarItem = item2
         viewController3.tabBarItem = item3
+    
+        viewController1.navigationController?.navigationBar.barTintColor = UIColor.barColor()
+        viewController2.navigationController?.navigationBar.barTintColor = UIColor.barColor()
+        viewController3.navigationController?.navigationBar.barTintColor = UIColor.barColor()
+        self.tabBar.barTintColor = UIColor.barColor()
+        
     }
 
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {

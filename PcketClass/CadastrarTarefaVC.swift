@@ -24,14 +24,14 @@ class CadastrarTarefaVC: UIViewController,UITextFieldDelegate, UITableViewDelega
         campoNome.delegate = self
         campoNome.placeholder = "Nome"
         
-        tableView = UITableView(frame: CGRectMake(0, 300, self.view.frame.size.width, 400))
+        tableView = UITableView(frame: CGRectMake(0, 50, self.view.frame.size.width, 400))
         tableView.scrollEnabled = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame:CGRectZero)
         view.addSubview(tableView)
         
-        self.datePicker = UIDatePicker(frame: CGRectMake(0, 100, self.view.frame.size.width, 200))
+        self.datePicker = UIDatePicker(frame: CGRectMake(0, 300, self.view.frame.size.width, 200))
         datePicker.datePickerMode = UIDatePickerMode.Date
         datePicker.minimumDate = NSDate()
         datePicker.maximumDate = NSDate().dateByAddingTimeInterval(365*24*60*60)

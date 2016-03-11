@@ -29,15 +29,15 @@ class CadastrarAulasVC : UIViewController, UITableViewDelegate, UITableViewDataS
         campoSala.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         campoSala.delegate = self
         
-        tableView = UITableView(frame: CGRectMake(0, 300, self.view.frame.size.width, 400))
+        
+        tableView = UITableView(frame: CGRectMake(0, 50, self.view.frame.size.width, 400))
 
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.scrollEnabled = false
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         view.addSubview(tableView)
         
-        self.pickerView = UIPickerView(frame: CGRectMake(0, 100, self.view.frame.size.width, 200))
+        self.pickerView = UIPickerView(frame: CGRectMake(0, 200, self.view.frame.size.width, 200))
         pickerView.delegate = self
         pickerView.dataSource = self
         view.addSubview(pickerView)

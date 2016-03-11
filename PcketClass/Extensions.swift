@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 extension Array where Element: Equatable {
     mutating func removeObject(object: Element) {
         if let index = self.indexOf(object) {
@@ -55,4 +57,12 @@ extension NSDate {
         return hour!
     }
     
+}
+
+extension UIColor {
+    
+    class func barColor()->UIColor {
+        return UIColor(red: 1.0, green: 235.0/255, blue: 205/255.0, alpha: 1)
+    }
+
 }

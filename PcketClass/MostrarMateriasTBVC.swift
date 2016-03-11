@@ -29,10 +29,6 @@ class MostrarMateriasTBVC: UITableViewController {
         materiasArray = DAOMateria().carrega()
         self.tableView.reloadData()
         
-        let timeNow = NSDate()
-       // timeNow.
-        
-        
     }
     
     func addMateria(sender:AnyObject) {

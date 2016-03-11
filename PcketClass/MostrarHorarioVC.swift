@@ -77,7 +77,8 @@ class MostrarHorarioVC: UITableViewController {
             let aula = aulasArray[i]
             if aula.horaComeco <= horaComeco && aula.horaFinal > horaComeco {
                 string = string + materiaDaAula[i].nome
-                cell.detailTextLabel?.text = "                   "+aula.sala
+                cell.detailTextLabel?.text = "                                      "+aula.sala
+                cell.detailTextLabel?.textAlignment = NSTextAlignment.Center
             }
         
         }

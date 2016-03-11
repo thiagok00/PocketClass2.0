@@ -120,9 +120,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D00BBADB1C1BE1EE0084355F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		D0C25D6B1BC97827002E5D63 /* Materias Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D00BBADB1C1BE1EE0084355F /* Data */,
 				D0C25D671BC973A0002E5D63 /* MostrarMateriasTBVC.swift */,
 				D05A47F61BCA134E00D74B5A /* MateriaDetalhesVC.swift */,
 				D05A47F81BCA177400D74B5A /* CadastrarMateriaVC.swift */,
@@ -291,6 +299,7 @@
 				TargetAttributes = {
 					D0C60FCE1BAC8163009D9728 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 5BS7QB5JFF;
 					};
 					D0C60FE21BAC8163009D9728 = {
 						CreatedOnToolsVersion = 7.0;
@@ -531,10 +540,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PcketClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bepid.PcketClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -542,10 +554,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = PcketClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = bepid.PcketClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

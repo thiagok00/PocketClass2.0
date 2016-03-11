@@ -16,6 +16,7 @@ class MostrarTarefasTBVC: UITableViewController, UIAlertViewDelegate {
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.whiteColor()
         self.title = "Tarefas"
+       // self.navigationController?.tabBarController.tab
        
         self.tableView.delegate = self
         self.tableView.dataSource = self

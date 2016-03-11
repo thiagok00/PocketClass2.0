@@ -26,7 +26,7 @@ class DetalheTarefasVC: UITableViewController {
         button.center.y = 400
         button.backgroundColor = UIColor.redColor()
         button.setTitle("Excluir Tarefa", forState: UIControlState.Normal)
-        button.addTarget(self, action: "deletarTarefa", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: "warning", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(button)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "popYourself", name: "popCadastroTarefa", object: nil)
         
@@ -35,9 +35,28 @@ class DetalheTarefasVC: UITableViewController {
     func popYourself() {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
     func deletarTarefa() {
         DAOMateria().removeTarefa(tarefaEscolhida)
         self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    func warning() {
+        
+        let alert = UIAlertController(title: "Cuidado", message: "Essa operação é irreversivel. Você tem certeza?", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        func deletarTarefa(sender:UIAlertAction) {
+            DAOMateria().removeTarefa(tarefaEscolhida)
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+        
+        let deleteAction = UIAlertAction(title: "Sim", style: .Default, handler: deletarTarefa)
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        presentViewController(alert, animated: true, completion: nil)
+
     
     }
     
